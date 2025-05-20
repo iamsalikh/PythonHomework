@@ -41,5 +41,36 @@ for char in text:
 print("Number of vowels:", count)
 
 # 7. Write a Python program that takes a list of numbers as input and prints the maximum value.
+nums = input("Enter numbers: ").split()
+max_value = int(nums[0])
 
+for n in nums:
+    if int(n) > max_value:
+        max_value = int(n)
 
+print("Max value:", max_value)
+
+# 8. Write a Python program that checks if a given word is a palindrome (reads the same forward and backward).
+word = input("Write a word: ")
+word = word.lower() 
+reversed_word = word[::-1]  
+if word == reversed_word:
+    print("This is palindrome")
+else:
+    print("This is not palindrome")
+
+# 9. Write a Python program that extracts and prints the domain from an email address provided by the user.
+email = input("Enter your email address: ")
+domain = email.split('@')[-1]  
+print("Domain:", domain)
+
+# 10. Write a Python program to generate a random password containing letters, digits, and special characters.
+import random
+letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+digits = "0123456789"
+special = "!@#$%^&*()-_=+[]{}|;:,.<>?/"
+chars = letters + digits + special
+password = ""
+for _ in range(12):
+    password += random.choice(chars)
+print("Password:", password)
